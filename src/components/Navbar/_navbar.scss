@@ -1,12 +1,55 @@
-//@import '../../config/_variable.scss';
-
-.navbar{
+.sidebar{
   background-color: $secondary-color;
-  width: 300px;
+  width: 200px;
   height: 100vh;
 
-  .item__link{
+  &__logo img{
     width: 100%;
-    color: $primary-color;
+    height: 60px;
+    object-fit: contain;
+    margin: 50px 0 30px;
   }
+
+  .nav{
+    &__item{
+      padding: 15px;
+    }
+
+    &__link {
+      padding: 8px 0;
+      position: relative;
+      color: $primary-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 20px;
+      font-weight: 500;
+
+      &:after{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(0,0,0,0.1);
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+        -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+        transition: opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+
+      &:hover::after, &:focus::after{
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
+      }
+    }
+  }
+
 }
+

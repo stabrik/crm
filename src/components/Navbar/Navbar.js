@@ -1,7 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import './_navbar.scss';
-
+import Logo from "../../assets/logo.png";
 const list = [
     {name: 'Start', path: '/'},
     {name: 'About', path: '/about'},
@@ -9,13 +8,16 @@ const list = [
 ];
 
 const Navbar = () => {
-    const menu = list.map( (elem) => (<li className="list__item" key={elem.name}> <NavLink exact={elem.path === '/'} className="item__link" to={elem.path}>{elem.name}</NavLink></li>) )
+    const menu = list.map( (elem) => (<li className="nav__item" key={elem.name}> <NavLink exact={elem.path === '/'} className="nav__link" to={elem.path}>{elem.name}</NavLink></li>) )
     return (
-        <nav className="navbar">
-            <ul className="navbar__list">
-                {menu}
-            </ul>
-        </nav>
+        <header className="sidebar">
+            <a href="" className="sidebar__logo"><img src={Logo} alt="brak zdjecia"/></a>
+            <nav className="sidebar__nav">
+                <ul className="nav__list">
+                    {menu}
+                </ul>
+            </nav>
+        </header>
     )
 }
 
