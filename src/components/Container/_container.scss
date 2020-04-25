@@ -1,0 +1,19 @@
+main{
+  display: flex;
+
+  .container{
+    border-radius: 10px;
+    flex: 1;
+    margin: 30px;
+    border: 1px solid $secondary-color;
+
+    &__header{
+      border-bottom: 1px solid $secondary-color;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+    }
+  }
+}

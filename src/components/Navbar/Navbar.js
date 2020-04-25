@@ -2,9 +2,9 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import Logo from "../../assets/logo.png";
 const list = [
-    {name: 'Start', path: '/'},
-    {name: 'About', path: '/about'},
-    {name: 'User', path: '/user'}
+    {name: 'Home', path: '/'},
+    {name: 'Users', path: '/users'},
+    {name: 'Contact', path: '/contact'}
 ];
 
 const Navbar = () => {

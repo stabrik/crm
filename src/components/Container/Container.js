@@ -3,13 +3,13 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-
+import Users from '../Users/Users';
 
 const Container = () => {
     return (
         <Switch>
-            <Route path="/about"><About /></Route>
             <Route path="/users"><Users /></Route>
+            <Route path="/contact"><Contact /></Route>
             <Route path="/"><Home /></Route>
         </Switch>
     )
@@ -18,13 +18,13 @@ const Container = () => {
 export default Container;
 
 function Home() {
-    return <h2>Home</h2>;
+    return <div className="container__header">
+        <h2>Home</h2>
+    </div>;
 }
 
-function About() {
-    return <h2>About</h2>;
-}
-
-function Users() {
-    return <h2>Users</h2>;
+function Contact() {
+    return <div className="container__header">
+        <h2>Contact</h2>
+    </div>;
 }

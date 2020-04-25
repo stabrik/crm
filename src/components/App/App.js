@@ -6,10 +6,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
       <Router>
-        <div className="container">
+        <div>
             <main>
                 <Navbar/>
-                <section>
+                <section className="container">
                     {<Container />}
                 </section>
             </main>
