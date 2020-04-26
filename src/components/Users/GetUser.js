@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserList from "./UserList";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class GetUser extends Component {
     constructor(props) {
@@ -31,11 +32,12 @@ class GetUser extends Component {
     }
 
     render() {
-        const { error, isLoaded, items } = this.state;
+        const { error, isLoaded } = this.state;
+
         if (error) {
             return <div>Błąd: {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <CircularProgress />;
         } else {
             return (
                 <UserList users={this.state.items}/>
