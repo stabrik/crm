@@ -6,6 +6,7 @@ main{
     flex: 1;
     margin: 30px;
     border: 1px solid $secondary-color;
+    height: 100%;
 
     &__header{
       border-bottom: 1px solid $secondary-color;
