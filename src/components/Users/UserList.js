@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
+    body: {
+        borderColor: '#f8f8f8',
+    }
 });
 
 export default function UserList(props) {
@@ -25,25 +28,25 @@ export default function UserList(props) {
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell></TableCell>
-                        <TableCell align="right">Age</TableCell>
-                        <TableCell align="right">Phone</TableCell>
-                        <TableCell align="right">Email</TableCell>
+                        <TableCell className={classes.body}>Name</TableCell>
+                        <TableCell className={classes.body}></TableCell>
+                        <TableCell align="right" className={classes.body}>Age</TableCell>
+                        <TableCell align="right" className={classes.body}>Phone</TableCell>
+                        <TableCell align="right" className={classes.body}>Email</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {props.users.map((row) => (
                         <TableRow key={row.name.first}>
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" className={classes.body}>
                                 <Avatar alt={row.name.first} src={row.picture.thumbnail} />
                             </TableCell>
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" className={classes.body}>
                                 {row.name.first}
                             </TableCell>
-                            <TableCell align="right">{row.dob.age}</TableCell>
-                            <TableCell align="right">{row.phone}</TableCell>
-                            <TableCell align="right">{row.email}</TableCell>
+                            <TableCell align="right" className={classes.body}>{row.dob.age}</TableCell>
+                            <TableCell align="right" className={classes.body}>{row.phone}</TableCell>
+                            <TableCell align="right" className={classes.body}>{row.email}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

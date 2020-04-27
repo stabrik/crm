@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import UserList from "./UserList";
+import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+const useStyles = theme => ({
+    position: {
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '20px 0',
+    },
+    color: {
+        color: '#69B44A',
+    }
+});
 
 class GetUser extends Component {
     constructor(props) {
@@ -32,18 +43,17 @@ class GetUser extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         const { error, isLoaded } = this.state;
 
         if (error) {
             return <div>Błąd: {error.message}</div>;
         } else if (!isLoaded) {
-            return <CircularProgress />;
+            return <div className={classes.position}><CircularProgress className={classes.color}/></div>;
         } else {
-            return (
-                <UserList users={this.state.items}/>
-            );
+            return <UserList users={this.state.items}/>;
         }
     }
 }
 
-export default GetUser;
+export default withStyles(useStyles)(GetUser);
