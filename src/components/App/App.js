@@ -4,6 +4,7 @@ import Container from "../Container/Container";
 import Autho from "../Login/Login";
 import { BrowserRouter as Router } from "react-router-dom";
 import {SelectCustom} from '../Select/select';
+import ImageUpload from '../Select/select';
 
 function App() {
     const options = [
@@ -22,6 +23,7 @@ function App() {
                 {/*</section>*/}
                 {/*<Autho />*/}
                 {/*<SelectCustom options={options}/>*/}
+                <ImageUpload />
             </main>
         </div>
       </Router>
