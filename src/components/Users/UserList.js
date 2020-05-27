@@ -21,8 +21,9 @@ const useStyles = makeStyles({
     }
 });
 
-export default function UserList(props) {
+function UserList(props) {
     const classes = useStyles();
+
     return (
         <TableContainer className={classes.parent} component={Paper}>
             <Table className={classes.table} aria-label="simple table">
@@ -54,3 +55,4 @@ export default function UserList(props) {
         </TableContainer>
     );
 }
+export default UserList;
